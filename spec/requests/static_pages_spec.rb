@@ -43,4 +43,18 @@ describe "Static pages" do
       page.should have_selector('title', text: " | About Us")
     end
   end
+
+  describe "Contact page" do
+    before do
+      visit '/static_pages/contact'
+    end
+
+    it "should have the content 'Contact'" do
+      page.should have_selector('h1', text: "Contact")
+    end
+
+    it "should have the title 'Contact'" do
+      page.should have_selector('title', text: " | Contact")
+    end
+  end
 end
