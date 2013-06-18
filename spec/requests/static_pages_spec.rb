@@ -11,8 +11,12 @@ describe "Static pages" do
       page.should have_selector('h1', text: "Sample App")
     end
 
-    it "should have the title 'Home'" do
-      page.should have_selector('title', text: " | Home")
+    it "should have the base title" do
+      page.should have_selector('title', text: "GeoTwitter")
+    end
+
+    it "should not have a custome page title" do
+      page.should_not have_selector('title', text: "| Home")
     end
   end
 
